@@ -1,4 +1,3 @@
-
 import { Logger, NotFoundException } from '@nestjs/common';
 import { FilterQuery, Model, Types, UpdateQuery } from 'mongoose';
 import { AbstractDocument } from './abstract.schema';
@@ -24,7 +23,8 @@ export abstract class AbstractRepository<TDocument extends AbstractDocument> {
       throw new NotFoundException('Document not found.');
     }
 
-    return document;
+    // Todo - fix type
+    return document as any;
   }
 
   async findOneAndUpdate(
