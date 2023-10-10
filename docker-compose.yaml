@@ -8,4 +8,6 @@ services:
     ports:
       - '3000:3000'
     volumes:
-      - .:/users/src/app 
+      - .:/usr/src/app 
+  mongo:
+    image: mongo
